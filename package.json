@@ -1,0 +1,19 @@
+{
+  "name": "trello-server",
+  "private": true,
+  "type": "module",
+  "description": "Trello uslubidagi vazifa boshqaruvi: rahbarlar sayti + Telegram Mini App (Node.js + SQLite + Svelte 5)",
+  "engines": { "node": ">=22.13" },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning src/server.js",
+    "dev": "node --disable-warning=ExperimentalWarning tools/dev.mjs",
+    "build": "vite build -c vite.sayt.config.js && vite build -c vite.app.config.js",
+    "test": "node --disable-warning=ExperimentalWarning test/appish.js && node --disable-warning=ExperimentalWarning --test test/shadow.test.js test/cron.test.js test/import.test.js test/server.test.js",
+    "import": "node --disable-warning=ExperimentalWarning tools/import.mjs"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^7.3.0",
+    "svelte": "^5.57.0",
+    "vite": "^8.3.0"
+  }
+}

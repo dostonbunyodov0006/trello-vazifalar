@@ -1,0 +1,107 @@
+/* 🖥 BIGANT Вазифалар — рангларнинг ҳаммаси trello.com'нинг ўзидан ўлчаб олинган
+ * (Atlassian Design System токенлари, 2026-09-24). Иккита мавзу: ёруғ ва қоронғи (html[data-mavzu]). */
+:root, :root[data-mavzu="qorongu"] {
+  --ink: #CECFD2;          /* --ds-text */
+  --muted: #A9ABAF;        /* --ds-text-subtle */
+  --line: #E3E4F21F;       /* --ds-border */
+  --line2: #CECED912;
+  --surf: #242528;         /* --ds-surface-raised — карточка */
+  --surf2: #2B2C2F;        /* --ds-surface-overlay — ойна, меню */
+  --surfh: #2B2C2F;        /* --ds-surface-pressed */
+  --bg: #1F1F21;           /* --ds-surface */
+  --list: #101204;         /* устун фони (Trello'да ҳам айнан шу) */
+  --hover: #CECED912;      /* --ds-background-neutral */
+  --press: #E3E4F21F;      /* --ds-background-neutral-hovered */
+  --brand: #669DF1;        /* --ds-background-brand-bold */
+  --brand2: #8FB8F6;
+  --brandsoft: #1C2B42;    /* --ds-background-selected */
+  --rd: #C9372C; --rdt: #FD9891; --amb: #FBC828; --gr: #94C748; --or: #E56910;
+  --onbrand: #1F1F21;      /* --ds-text-inverse */
+  --ajr: #000000;          /* ажратувчи тим қора чизиқ */
+  --tepa: #1F1F21;
+  --shadow: 0 1px 1px #01040480, 0 0 1px #01040480;              /* --ds-shadow-raised */
+  --shadow2: 0 8px 12px #0104045C, 0 0 1px 1px #01040480;        /* --ds-shadow-overlay */
+  --board: linear-gradient(145deg, #6E5DC6 2%, #E774BB 100%);   /* trello.com: backgrounds/gradients/rainbow.svg */
+  --r: 8px;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;   /* Trello: Atlassian Sans — энг яқин бепул шрифт Inter */
+  font-size: 15px;          /* Trello: body 14px / 20px */
+  line-height: 22px;
+  color: var(--ink);
+  color-scheme: dark;
+  -webkit-font-smoothing: antialiased;
+}
+:root[data-mavzu="yorug"] {
+  --ink: #292A2E;          /* --ds-text */
+  --muted: #505258;        /* --ds-text-subtle */
+  --line: #0B120E24;       /* --ds-border */
+  --line2: #0515240F;
+  --surf: #FFFFFF;         /* --ds-surface-raised */
+  --surf2: #FFFFFF;        /* --ds-surface-overlay */
+  --surfh: #F0F1F2;        /* --ds-surface-hovered */
+  --bg: #F8F8F8;           /* --ds-surface-sunken */
+  --list: #F1F2F4;         /* устун фони */
+  --hover: #0515240F;      /* --ds-background-neutral */
+  --press: #0B120E24;      /* --ds-background-neutral-hovered */
+  --brand: #1868DB;        /* --ds-background-brand-bold */
+  --brand2: #1558BC;
+  --brandsoft: #E9F2FE;    /* --ds-background-selected */
+  --rd: #C9372C; --rdt: #AE2E24; --amb: #FBC828; --gr: #5B7F24; --or: #E56910;
+  --onbrand: #FFFFFF;
+  --ajr: #1E1F2159;        /* ажратувчи тўқ чизиқ */
+  --tepa: #FFFFFF;
+  --shadow: 0 1px 1px #1E1F2140, 0 0 1px #1E1F214F;              /* --ds-shadow-raised */
+  --shadow2: 0 8px 12px #1E1F2126, 0 0 1px #1E1F214F;            /* --ds-shadow-overlay */
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: var(--bg); font-size: 15px; line-height: 22px; }
+button { font: inherit; color: inherit; cursor: pointer; }
+input, textarea, select { font: inherit; color: var(--ink); }
+button:disabled { cursor: default; opacity: .55; }
+a { color: var(--brand); }
+
+.tugma { display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 34px; padding: 0 12px; border-radius: 6px; border: 0;
+  background: var(--hover); color: var(--ink); font-size: 15px; font-weight: 500; white-space: nowrap; }
+.tugma:hover:not(:disabled) { background: var(--press); }
+.tugma.asosiy { background: var(--brand); color: var(--onbrand); }
+.tugma.asosiy:hover:not(:disabled) { background: var(--brand2); }
+.tugma.xavf { background: var(--rd); color: #fff; }
+.tugma.xavf:hover:not(:disabled) { background: #ae2e24; }
+.tugma.shaffof { background: transparent; }
+.tugma.shaffof:hover:not(:disabled) { background: var(--hover); }
+.tugma.keng { width: 100%; justify-content: flex-start; }
+
+.maydon { width: 100%; min-height: 36px; padding: 6px 10px; border: 2px solid var(--line); border-radius: 4px; background: var(--surf); outline: none; font-size: 15px; }
+.maydon:focus { border-color: var(--brand); background: var(--bg); }
+textarea.maydon { resize: vertical; min-height: 80px; line-height: 1.45; }
+.yorliq { display: block; font-size: 13px; font-weight: 700; color: var(--muted); margin: 0 0 4px; }
+
+.avatar { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%;
+  background: #dfd8fd; color: #352c63; font-size: 13px; font-weight: 700; flex-shrink: 0; }
+.label { display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border-radius: 4px; color: #fff; font-size: 13px; font-weight: 600; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.nishon { display: inline-flex; align-items: center; gap: 4px; height: 24px; padding: 0 6px; border-radius: 4px; font-size: 13px; color: var(--muted); }
+.nishon.kech { background: var(--rd); color: #fff; }
+.nishon.yaqin { background: var(--amb); color: #533f04; }
+.nishon.tayyor { background: var(--gr); color: #fff; }
+.nishon.qizil { color: var(--rdt); font-weight: 600; }
+
+.xato { color: var(--rdt); font-size: 15px; }
+.bildirish { position: fixed; left: 50%; bottom: 84px; transform: translateX(-50%); background: var(--surf2); color: var(--ink); border: 1px solid var(--line); padding: 10px 16px; border-radius: 8px; font-size: 15px; z-index: 200; box-shadow: var(--shadow2); }
+.bildirish.rd { background: var(--rd); color: #fff; border-color: transparent; }
+.aylana { width: 28px; height: 28px; border: 3px solid var(--line); border-top-color: var(--brand); border-radius: 50%; animation: ay .9s linear infinite; margin: 40px auto; }
+@keyframes ay { to { transform: rotate(360deg); } }
+
+/* Trello'дагидек ингичка скроллбар */
+::-webkit-scrollbar { width: 12px; height: 12px; }
+::-webkit-scrollbar-track { background: #00000024; border-radius: 8px; }
+::-webkit-scrollbar-thumb { background: #a6c5e23d; border-radius: 8px; border: 3px solid transparent; background-clip: content-box; }
+::-webkit-scrollbar-thumb:hover { background: #a6c5e266; border: 3px solid transparent; background-clip: content-box; }
+
+:root[data-mavzu="yorug"] ::-webkit-scrollbar-track { background: #00000014; }
+:root[data-mavzu="yorug"] ::-webkit-scrollbar-thumb { background: #091e4259; border: 3px solid transparent; background-clip: content-box; }
+:root[data-mavzu="yorug"] ::-webkit-scrollbar-thumb:hover { background: #091e428c; border: 3px solid transparent; background-clip: content-box; }
+
+/* Карта сурилаётганда курсор */
+body.surilyapti, body.surilyapti * { cursor: grabbing !important; }
+
+small, .vaqt, .yorliq { line-height: 18px; }

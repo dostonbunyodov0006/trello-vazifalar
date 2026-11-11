@@ -1,0 +1,25 @@
+# Vazifalar (Trello) — o'z bazasi (./data/trello.sqlite), o'z konteyneri.
+# Port faqat 127.0.0.1 ga ochiladi: oldiga nginx/Caddy qo'yib, SSL bilan tashqariga chiqaring.
+name: trello
+
+services:
+  trello:
+    build: .
+    image: trello:latest
+    container_name: trello
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATA_DIR: /data
+      PORT: "8080"
+    volumes:
+      - ./data:/data            # trello.sqlite + files/ (rasmlar, hujjatlar)
+    mem_limit: 256m
+    cpus: 0.5
+    ports:
+      - "127.0.0.1:8080:8080"
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
